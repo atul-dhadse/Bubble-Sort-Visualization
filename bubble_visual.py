@@ -4,8 +4,8 @@ import sys
 from pygame.locals import *
 import time
 
-WINDOWWIDTH = 1500
-WINDOWHEIGHT = 600
+WINDOWWIDTH = 800
+WINDOWHEIGHT = 700
 
 BLACK =  (0,0,0)
 RED = (255,51,51)
@@ -16,11 +16,14 @@ ORANGE = (255, 165, 0)
 
 BGCOLOR = BLACK
 BARCOLOR = ORANGE
-TOTALNUMS = 200
+TOTALNUMS = 100
 LINEHEIGHT = 98
 BARWIDTH = 5
-XSTART = 50
+XSTART = WINDOWHEIGHT/2 - (TOTALNUMS/2)*(BARWIDTH + 1)
 LINECOLOR = WHITE
+
+#gap between bar's height
+STEP = 5
 
 FPS = 120
 
@@ -31,7 +34,8 @@ def main():
     FPSCLOCK = pygame.time.Clock()
     XMARGIN = XSTART
 
-    numList = list(range(1,TOTALNUMS + 1))
+    numList = list(range(STEP, (TOTALNUMS + 1)*STEP, STEP))
+    sortedList = numList.copy()
     MAX = numList[-1]
     random.shuffle(numList)
 
@@ -59,19 +63,22 @@ def main():
             else:
                 XMARGIN += 7
             pygame.display.update()
-            if FPS:
-                FPSCLOCK.tick(FPS)
+            FPSCLOCK.tick(FPS)
+        numList = numList[:len(numList)-1]
         XMARGIN = XSTART
 
-    DISPLAYSURF.fill(RED)
-    drawBars(numList, BLACK)
+    pygame.time.wait(500)
+    DISPLAYSURF.fill(BLACK)
+    drawBars(sortedList, GREEN)
 
     SURF = DISPLAYSURF.copy()
+
 
     while True:
         checkForQuit()
         DISPLAYSURF.blit(SURF, (0,0))
         pygame.display.flip()
+
 
 def drawBars(numList,color):
     XMARGIN = XSTART
