@@ -4,8 +4,8 @@ import sys
 from pygame.locals import *
 import time
 
-WINDOWWIDTH = 800
-WINDOWHEIGHT = 700
+WINDOWWIDTH = 1500
+WINDOWHEIGHT = 900
 
 BLACK =  (0,0,0)
 RED = (255,51,51)
@@ -16,10 +16,11 @@ ORANGE = (255, 165, 0)
 
 BGCOLOR = BLACK
 BARCOLOR = ORANGE
-TOTALNUMS = 100
+TOTALBARS = 100
 LINEHEIGHT = 98
 BARWIDTH = 5
-XSTART = WINDOWHEIGHT/2 - (TOTALNUMS/2)*(BARWIDTH + 1)
+# XSTART = WINDOWWIDTH/2 - (TOTALBARS/2)*(BARWIDTH)
+XSTART = (WINDOWWIDTH - (TOTALBARS)*(BARWIDTH + 2))/2
 LINECOLOR = WHITE
 
 #gap between bar's height
@@ -34,7 +35,7 @@ def main():
     FPSCLOCK = pygame.time.Clock()
     XMARGIN = XSTART
 
-    numList = list(range(STEP, (TOTALNUMS + 1)*STEP, STEP))
+    numList = list(range(STEP, (TOTALBARS + 1)*STEP, STEP))
     sortedList = numList.copy()
     MAX = numList[-1]
     random.shuffle(numList)
