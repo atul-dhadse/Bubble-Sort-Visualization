@@ -25,7 +25,7 @@ LINECOLOR = WHITE
 #gap between bar's height
 STEP = 5
 
-FPS = 120
+FPS = 30
 
 def main():
     global DISPLAYSURF, FPSCLOCK, XMARGIN
