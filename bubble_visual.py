@@ -58,8 +58,8 @@ def main():
                 pygame.draw.rect(DISPLAYSURF, BGCOLOR, (x,y,14, MAX))
                 x1, y1 = XMARGIN, WINDOWHEIGHT - LINEHEIGHT - numList[j]
                 x2, y2 = XMARGIN + 7, WINDOWHEIGHT - LINEHEIGHT - numList[j + 1]
-                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255)), (x1,y1, BARWIDTH, numList[j]))
-                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255)), (x2,y2, BARWIDTH, numList[j + 1]))
+                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255),random.randint(20,255)), (x1,y1, BARWIDTH, numList[j]))
+                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255),random.randint(20,255)), (x2,y2, BARWIDTH, numList[j + 1]))
                 XMARGIN += 7
             else:
                 XMARGIN += 7
