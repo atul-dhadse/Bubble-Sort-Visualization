@@ -26,7 +26,7 @@ LINECOLOR = WHITE
 #gap between bar's height
 STEP = 5
 
-FPS = 30
+FPS = 90
 
 def main():
     global DISPLAYSURF, FPSCLOCK, XMARGIN
@@ -68,7 +68,7 @@ def main():
         numList = numList[:len(numList)-1]
         XMARGIN = XSTART
 
-    pygame.time.wait(500)
+    time.sleep(2)
     DISPLAYSURF.fill(BLACK)
     drawBars(sortedList, GREEN)
     pygame.display.flip()
