@@ -58,8 +58,8 @@ def main():
                 pygame.draw.rect(DISPLAYSURF, BGCOLOR, (x,y,14, MAX))
                 x1, y1 = XMARGIN, WINDOWHEIGHT - LINEHEIGHT - numList[j]
                 x2, y2 = XMARGIN + 7, WINDOWHEIGHT - LINEHEIGHT - numList[j + 1]
-                pygame.draw.rect(DISPLAYSURF, RED, (x1,y1, BARWIDTH, numList[j]))
-                pygame.draw.rect(DISPLAYSURF, BLUE, (x2,y2, BARWIDTH, numList[j + 1]))
+                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255), (x1,y1, BARWIDTH, numList[j]))
+                pygame.draw.rect(DISPLAYSURF, (random.randint(100,255),random.randint(100,255), (x2,y2, BARWIDTH, numList[j + 1]))
                 XMARGIN += 7
             else:
                 XMARGIN += 7
@@ -71,14 +71,11 @@ def main():
     pygame.time.wait(500)
     DISPLAYSURF.fill(BLACK)
     drawBars(sortedList, GREEN)
-
-    SURF = DISPLAYSURF.copy()
+    pygame.display.flip()
 
 
     while True:
         checkForQuit()
-        DISPLAYSURF.blit(SURF, (0,0))
-        pygame.display.flip()
 
 
 def drawBars(numList,color):
