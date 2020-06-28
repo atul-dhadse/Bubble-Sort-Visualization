@@ -9,7 +9,6 @@ An animation, to visualize the bubble sort algorithm, using python's pygame modu
    
 -> The gap between two consecutive bars is set in variable GAP.
 
-You can visualize for upto 200 bars with STEP = 4 and GAP = 2 (Don't forget to increase FPS, else for 200 bars visuals will run for too long...)
 
 Press ESC Key or the CROSS any time to quit...
 
